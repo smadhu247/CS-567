@@ -1,0 +1,11 @@
+What challenges did you encounter with this assignment, if any? 
+- The challenge of this assignment was simply navigating how to do unit testing in Python since it was completely new to me. However, with the partial solution given on Canvas, it was much easier to figure out how to implement unittests. 
+
+What did you think about the requirements specification for this assignment?
+- The requirement specification for this assignment was well laid out and extremely fair. The directions explained exactly what to do and what steps to take to be successful.
+
+What challenges did you encounter with the tools?
+- For this assignment, I did not encounter any real challenges with the tools. One thing that I did learn was that the unittests only worked with python3, which is good to know for future assignments.
+
+Describe the criteria you used to determine that you had sufficient test cases, i.e. how did you know you were done?
+- The criteria I used for having sufficent test cases was having 2 assertEqual test cases and 1 assertNotEqual test case. The combination of these two would show me that the solution properly worked. I know I was done with the assignment when all of these test cases passed. 
