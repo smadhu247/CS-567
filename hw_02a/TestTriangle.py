@@ -61,7 +61,7 @@ class TestTriangles(unittest.TestCase):
         self.assertEqual(classifyTriangle(4,5,10),'NotATriangle','4,5,10 is NotATriangle')
 
     def testNotATriangleTriangleB(self): 
-        self.assertEqual(classifyTriangle(4,4,8),'NotATriangle','4,4,8 is NotATriangle')
+        self.assertEqual(classifyTriangle(4,4,9),'NotATriangle','4,4,8 is NotATriangle')
 
     def testNotATriangleTriangleC(self): 
         self.assertEqual(classifyTriangle(2,2,19),'NotATriangle','21,12,14 is a triangle')
