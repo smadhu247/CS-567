@@ -13,6 +13,7 @@ jobs:
           command: |
             pip install pytest
             pip install requests
+            pip install nose requests
             pytest --junitxml=test-results/junit.xml hw_02a/TestTriangle.py
             pytest --junitxml=test-results/junit.xml hw_04a/testgithubAPI.py 
       - store_test_results:
