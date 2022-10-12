@@ -1,35 +1,35 @@
 import unittest
-from githubAPI import getRepos
+from unittest.mock import patch
+import githubAPI 
 
-# Standard library imports...
-from unittest.mock import Mock, patch
-from nose.tools import assert_is_not_none
-
-# class TestGithubAPI(unittest.TestCase):
-
-#     def testOne(self): 
-#         self.assertEqual(getRepos("smadhu247"),'Repo: CS-555 Number of commits: 30\nRepo: CS_146 Number of commits: 5\nRepo: hello-world Number of commits: 1\nRepo: TicTacToe Number of commits: 1\n')
+class TestGitHubAPI(unittest.TestCase):
+    @patch('githubAPI.getRepos')
+    def test_github_API_1(self, mock_get):
+        # Configure the mock to return number of commits to be 4
+        mock_get.return_value = "Repo: CS-555 Number of commits: 4"
+        # Call the service, which will send a request to the server.
+        response = githubAPI.getRepos("smadhu247")
+        # If the request is sent successfully, then I expect a response to be returned.
+        self.assertEqual(response, "Repo: CS-555 Number of commits: 4")
     
-#     def testThree(self): 
-#         self.assertEqual(getRepos("ibdasuhvlinwcjbhvsfv"), 'Username was not found')
+    @patch('githubAPI.getRepos')
+    def test_github_API_2(self, mock_get):
+        # Configure the mock to return number of repos to be 6
+        mock_get.return_value = "Repo: CS-555 Number of commits: 6"
+        # Call the service, which will send a request to the server.
+        response = githubAPI.getRepos("smadhu247")
+        # If the request is sent successfully, then I expect a response to be returned.
+        self.assertEqual(response, "Repo: CS-555 Number of commits: 6")
 
-#     def testFour(self): 
-#         self.assertNotEqual(getRepos("smadhu247"), 'Username was not found')
+    @patch('githubAPI.getRepos')
+    def test_github_API_3(self, mock_get):
+        # Configure the mock to return number of repos to be 30
+        mock_get.return_value = "Repo: CS-555 Number of commits: 30"
+        # Call the service, which will send a request to the server.
+        response = githubAPI.getRepos("smadhu247")
+        # If the request is sent successfully, then I expect a response to be returned.
+        self.assertEqual(response, "Repo: CS-555 Number of commits: 30")
 
-#     def testFive(self): 
-#         self.assertNotEqual(getRepos("richkempinski"), 'Username was not found')
 
-# if __name__ == '__main__':
-#     print('Running unit tests')
-#     unittest.main()
-
-@patch('githubAPI.requests.get')
-def test_github_API(mock_get):
-    # Configure the mock to return a response with an OK status code.
-    mock_get.return_value.ok = True
-
-    # Call the service, which will send a request to the server.
-    response = getRepos("smadhu247")
-
-    # If the request is sent successfully, then I expect a response to be returned.
-    assert_is_not_none(response)
+if __name__ == "__main__":
+    unittest.main()
